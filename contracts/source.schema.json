@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hhaus.org/schemas/test/source.v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "owner", "repository", "revision", "generatorRevision"],
+  "properties": {
+    "schemaVersion": { "const": "hhaus-test.source.v1" },
+    "owner": { "const": "hacker-house-medellin" },
+    "repository": { "const": "hhm-pub-lib-core" },
+    "revision": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "generatorRevision": { "type": "string", "pattern": "^[0-9a-f]{40}$" }
+  }
+}
+
