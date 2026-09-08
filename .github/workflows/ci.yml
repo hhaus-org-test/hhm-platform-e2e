@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  public-core:
+  public-foundations:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:

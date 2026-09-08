@@ -11,7 +11,7 @@
   "scripts": {
     "test:contracts": "node --test tests/source-contract.test.mjs",
     "test:pinned": "node scripts/run-pinned-acceptance.mjs",
-    "test": "npm run test:contracts && npm run test:pinned"
+    "test:interfaces": "node scripts/run-interfaces-acceptance.mjs",
+    "test": "npm run test:contracts && npm run test:pinned && npm run test:interfaces"
   }
 }
-
