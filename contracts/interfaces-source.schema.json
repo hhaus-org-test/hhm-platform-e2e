@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hhaus.org/schemas/test/interfaces-source.v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "owner",
+    "repository",
+    "revision",
+    "generatorRevision",
+    "typespecSha256",
+    "jsonSchemaSha256",
+    "modelCount",
+    "enumCount"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "hhaus-test.interfaces-source.v1" },
+    "owner": { "const": "hacker-house-medellin" },
+    "repository": { "const": "hhm-interfaces" },
+    "revision": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "generatorRevision": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "typespecSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "jsonSchemaSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "modelCount": { "const": 17 },
+    "enumCount": { "const": 20 }
+  }
+}

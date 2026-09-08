@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "hhaus-test.interfaces-source.v1",
+  "owner": "hacker-house-medellin",
+  "repository": "hhm-interfaces",
+  "revision": "b66988b856946ff028085323ff502796b97e0012",
+  "generatorRevision": "7bf6b72ea433a0b9d9ef5a6e164b2a322bfedc1e",
+  "typespecSha256": "fe0938c831c60cf8f2156773d3e18bd8574d2f8aa278cef5a5b45a4463936e11",
+  "jsonSchemaSha256": "ed01c7820fe29f4557dde91c848fff0322cfab8174f4894cb8154692c33d6459",
+  "modelCount": 17,
+  "enumCount": 20
+}

@@ -21,4 +21,9 @@ The private `hacker-house-medellin/hhm-lambdas` repository is intentionally not 
 public test organization. Its production SHA is validated by read-only CI inside the owning
 organization until an explicit least-privilege cross-organization read credential is provisioned.
 
+The harness also pins the public `hacker-house-medellin/hhm-interfaces` production revision and
+independently replays its dual-authority parity, generated drift, JSON Schema, Protobuf, state
+machine, Rust contract, and generated SeaORM/Diesel compilation gates. The expected generator
+revision and both authority digests are immutable fields in the acceptance contract.
+
 Independent exact-SHA acceptance tests for HHM platform foundations
