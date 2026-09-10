@@ -1,0 +1,35 @@
+name: runtime config suite
+
+on:
+  pull_request:
+  push:
+    branches: [dev, main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  runtime-config-suite:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out exact candidate
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Verify exact candidate
+        run: test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+      - name: Set up Python 3.12
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12'
+          cache: ''
+      - name: Compile local acceptance test
+        run: python -m py_compile tests/runtime_config_suite.py
+      - name: Run local adversarial matrix
+        run: python tests/runtime_config_suite.py
+      - name: Reject unresolved conflict markers
+        run: |
+          ! grep -R -n -E '^(<<<<<<<|=======|>>>>>>>)' tests .github contracts
